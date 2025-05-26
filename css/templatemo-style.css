@@ -507,34 +507,40 @@ figure.effect-julia:hover p {
 }
 
 .project-buttons {
-    display: none;
+    visibility: hidden;
+    opacity: 0;
     position: absolute;
     bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1000;
+    left: 0;
+    right: 0;
     text-align: center;
-    width: 100%;
-}
-
-.project-buttons .btn {
-    display: inline-block;
-    text-decoration: none;
-    padding: 8px 16px;
-    margin: 5px;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.7);
-    border: 2px solid rgb(0, 47, 255);
+    pointer-events: none;
     transition: all 0.3s ease;
 }
 
-.project-buttons .btn:hover {
-    background-color: rgba(7, 84, 226, 0.915);
-    transform: translateY(-2px);
+.effect-julia:hover .project-buttons {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
 }
 
-.effect-julia.active .project-buttons {
-    display: block;
+.project-buttons .btn {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #333;
+    margin: 5px;
+    padding: 8px 15px;
+    font-size: 14px;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+
+.effect-julia:hover .project-buttons .btn {
+    transform: translateY(0);
+}
+
+.project-buttons .btn:hover {
+    background-color: #99FF66;
+    color: #000;
 }
 
 .navbar-collapse {
